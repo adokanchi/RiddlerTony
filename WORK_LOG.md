@@ -1,9 +1,12 @@
 Name: YOUR NAME HERE
 
-| Date   |    Time    |                                                                    Update |
-|:-------|:----------:|--------------------------------------------------------------------------:|
-| Aug 22 |  8-8:30pm  | I started by thinking about my place in the universe.<br/>It was scary... |
-|        |            |                                                             And then I... |
+| Date   |    Time     |                                                                                                                                                                                                                                                                                                                                           Update |
+|:-------|:-----------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Aug 29 | 12-12:30pm  |                                                                                                                                    I recoded my first three decoders to make them faster. Number three still needs work, as it uses parseInt. I also finally got number 4 working. I think it's already fast and doesn't need more optimization. |
+| Aug 28 | 2:15-2:45pm | I messed around with the fourth encryption scheme but couldn't get anything. The best I could get is converting from emoji to a decimal using https://r12a.github.io/app-conversion/ then reducing the decimal mod 8192 to cut it to one byte, then converting to ASCII. Unfortunately I don't think the solution is supposed to involve arabic. |
+| Aug 28 | 12-12:30pm  |                                                                                                                                                               I already knew how to solve the first three. I spent a bit fiddling with the tester functions. I'm not sure if I'm doing it right, but I did implement the first three algorithms. |
+| Aug 22 |  8-8:30pm   |                                                                                                                                                                                                                                                                        I started by thinking about my place in the universe.<br/>It was scary... |
+|        |             |                                                                                                                                                                                                                                                                                                                                    And then I... |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

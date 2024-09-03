@@ -7,36 +7,70 @@
  * Completed by: YOUR NAME HERE
  */
 public class Riddler {
-
+    private final String alphabet = "abcdefghijklmnopqrstuvwxyz";
     public String decryptOne(String encrypted) {
         String decrypted = "";
+        for (int i = 0; i < encrypted.length(); i++) {
+            char encryptChar = encrypted.charAt(i);
+            if (encryptChar >= 'a' && encryptChar <= 'z') {
+                decrypted += (char) ((encryptChar - 'a' + 9) % 26 + 'a');
+            }
+            else if (encryptChar >= 'A' && encryptChar <= 'Z') {
+                decrypted += (char) ((encryptChar - 'A' + 9) % 26 + 'A');
+            }
+            else {
+                decrypted += encryptChar;
+            }
+        }
 
-        // TODO: Complete the decryptOne() function.
-
+        System.out.println(decrypted);
         return decrypted;
     }
 
     public String decryptTwo(String encrypted) {
         String decrypted = "";
+        String[] ASCII = encrypted.split(" ");
+        for (String str : ASCII) {
+            int result = 0;
+            while (!str.isEmpty()) {
+                result *= 10;
+                result += str.charAt(0) - '0';
+                str = str.substring(1);
+            }
+            decrypted += (char) result;
+        }
 
-        // TODO: Complete the decryptTwo() function.
-
+        System.out.println(decrypted);
         return decrypted;
     }
 
     public String decryptThree(String encrypted) {
         String decrypted = "";
+        while (!encrypted.isEmpty()) {
+            String encryptedBinary = encrypted.substring(0,8);
 
-        // TODO: Complete the decryptThree() function.
+            // Convert encryptedBinary to a binary value
+            int encryptedDecimal = 0;
+            for (int i = 0; i < 8; i++) {
+                encryptedDecimal = encryptedDecimal << 1;
+                encryptedDecimal += encryptedBinary.charAt(i) - '0';
+            }
 
+            // Convert to text
+            decrypted += (char) encryptedDecimal;
+
+            encrypted = encrypted.substring(8);
+        }
+        System.out.println(decrypted);
         return decrypted;
     }
 
     public String decryptFour(String encrypted) {
         String decrypted = "";
-
-        // TODO: Complete the decryptFour() function.
-
+        for (int i = 0; i < encrypted.length(); i++) {
+            decrypted += (char) (encrypted.charAt(i) - 9984 + 'A');
+        }
+        System.out.println(decrypted);
         return decrypted;
     }
 }
